@@ -1,0 +1,12 @@
+/node_modules
+/.babelrc
+/.git
+/.gitignore
+.npmignore
+/jest.config.js
+*.test.js
+*.test.ts
+*.test.d.ts
+/.github
+tsconfig.json
+babel.config.js
