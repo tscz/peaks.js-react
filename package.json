@@ -1,6 +1,6 @@
 {
   "name": "peaks.js-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React hook for using peaks.js",
   "main": "dist/usePeaks.js",
   "types": "dist/usePeaks.d.ts",
@@ -23,7 +23,7 @@
   "homepage": "https://github.com/tscz/peaks.js-react#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tscz/peaks.js-react.git"
+    "url": "git+https://github.com/tscz/peaks.js-react.git"
   },
   "bugs": {
     "url": "https://github.com/tscz/peaks.js-react/issues"
