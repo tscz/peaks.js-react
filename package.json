@@ -1,12 +1,13 @@
 {
   "name": "peaks.js-react",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "React hook for using peaks.js",
   "main": "dist/usePeaks.js",
   "types": "dist/usePeaks.d.ts",
   "scripts": {
     "test": "jest",
-    "build": "tsc"
+    "build": "tsc",
+    "watch": "tsc -w"
   },
   "keywords": [
     "react",
@@ -29,7 +30,8 @@
     "url": "https://github.com/tscz/peaks.js-react/issues"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "peaks.js": "^3.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
