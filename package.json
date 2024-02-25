@@ -1,6 +1,6 @@
 {
   "name": "peaks.js-react",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "React hook for using peaks.js",
   "main": "dist/usePeaks.js",
   "types": "dist/usePeaks.d.ts",
@@ -28,6 +28,9 @@
   },
   "bugs": {
     "url": "https://github.com/tscz/peaks.js-react/issues"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/tscz"
   },
   "peerDependencies": {
     "react": "^18.2.0",
