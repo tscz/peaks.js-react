@@ -1,6 +1,6 @@
 {
   "name": "peaks.js-react",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "React hook for using peaks.js",
   "main": "dist/usePeaks.js",
   "types": "dist/usePeaks.d.ts",

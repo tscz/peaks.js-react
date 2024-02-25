@@ -1,6 +1,5 @@
 import Peaks, { PeaksInstance, PeaksOptions } from "peaks.js";
 import { useState, useEffect } from "react";
-import { log } from "console";
 
 interface PeaksHookResult {
   peaks: PeaksInstance | undefined;
@@ -22,7 +21,6 @@ export function usePeaks({
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    log(loading ? "loading" : "finished");
     setLoading(true);
 
     if (!audioRef.current) {
