@@ -16,12 +16,7 @@ import { usePeaks } from 'peaks.js-react';
 import { useRef } from 'react';
 
 // Inside your component
-const audioRef = useRef<HTMLAudioElement>(null);
-const waveformRef = useRef<HTMLDivElement>(null);
-
-const { peaks, loading, error } = usePeaks({
-  audioRef,
-  waveformRef,
+const { peaks, loading, error, audioRef, waveformRef } = usePeaks({
   options: {
     // Your Peaks.js options here
   },
@@ -37,6 +32,8 @@ The `usePeaks` hook returns an object with the following properties:
 - `peaks`: This is the instance of Peaks.js. You can use this to interact with the Peaks.js API.
 - `loading`: A Boolean that indicates whether Peaks.js is still initializing. You can use this to show a loading spinner, for example.
 - `error`: If an error occurred during initialization, this will be an Error object. Otherwise, it will be null.
+- `audioRef`: A ref to the HTMLAudioElement that the Peaks.js instance is associated with. You can use this ref to bind the audio element in your JSX.
+- `waveformRef`: A ref to the HTMLDivElement that the Peaks.js instance uses to render the waveform. You can use this ref to bind the div element in your JSX.
 
 ## Example
 
@@ -47,10 +44,7 @@ import React, { useRef } from 'react';
 import { usePeaks } from 'peaks.js-react';
 
 const Waveform: React.FC = () => {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const waveformRef = useRef<HTMLDivElement>(null);
-
-  const { peaks, loading, error } = usePeaks({
+  const { peaks, loading, error, audioRef, waveformRef } = usePeaks({
     audioRef,
     waveformRef,
   });

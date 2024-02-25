@@ -1,24 +1,26 @@
 import Peaks, { PeaksInstance, PeaksOptions } from "peaks.js";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo, useRef } from "react";
 
 interface PeaksHookResult {
   peaks: PeaksInstance | undefined;
   loading: boolean;
   error: Error | undefined;
+  audioRef: React.RefObject<HTMLAudioElement>;
+  waveformRef: React.RefObject<HTMLDivElement>;
 }
 
 export function usePeaks({
-  audioRef,
-  waveformRef,
   options = {},
 }: {
-  audioRef: React.RefObject<HTMLAudioElement>;
-  waveformRef: React.RefObject<HTMLDivElement>;
   options?: PeaksOptions;
 }): PeaksHookResult {
   const [peaks, setPeaks] = useState<PeaksInstance>();
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error>();
+
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const waveformRef = useRef<HTMLDivElement>(null);
+
   const memoizedOptions = useMemo(() => options, [JSON.stringify(options)]);
 
   useEffect(() => {
@@ -55,5 +57,5 @@ export function usePeaks({
     };
   }, [memoizedOptions]);
 
-  return { peaks, loading, error };
+  return { peaks, loading, error, audioRef, waveformRef };
 }
